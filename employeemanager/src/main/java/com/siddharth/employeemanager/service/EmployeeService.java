@@ -1,5 +1,6 @@
 package com.siddharth.employeemanager.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,14 @@ public class EmployeeService {
 	
 	public Employee saveEmployee(Employee employee) {
 		employee.setEmployeeCode(UUID.randomUUID().toString());
+		return empRepo.save(employee);
+	}
+	
+	public List<Employee> findAllEmployees(){
+		return empRepo.findAll();
+	}
+	
+	public Employee updateEmployee(Employee employee) {
 		return empRepo.save(employee);
 	}
 	
