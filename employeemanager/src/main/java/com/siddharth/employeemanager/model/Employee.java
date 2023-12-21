@@ -1,4 +1,6 @@
-package model;
+package com.siddharth.employeemanager.model;
+
+
 
 import java.io.Serializable;
 
@@ -100,10 +102,8 @@ public class Employee implements Serializable{
 		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", jobTitle=" + jobTitle + ", phone="
 				+ phone + ", imageUrl=" + imageUrl + ", employeeCode=" + employeeCode + "]";
 	}
-	
-	
-	
-	
-	
-	
 }
+	
+	
+	
+	
