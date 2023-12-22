@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +27,16 @@ export class AppComponent implements OnInit{
   );
  }
 
+ public onAddEmployee(addForm: NgForm):void{
+  document.getElementById('add-employee-form')?.click();
+  this.employeeServices.addEmployee(addForm.value).subscribe(
+    (response:Employee)=>{
+      console.log(response);
+      this.getEmployees();
+      addForm.reset();
+    }
+  )
+ }
  public onOpenModal(employee: Employee, mode:string){
   const button=document.createElement('button');
   const container=document.getElementById('main-container');
