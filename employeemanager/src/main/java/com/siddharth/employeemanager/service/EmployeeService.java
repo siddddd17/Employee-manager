@@ -10,6 +10,8 @@ import com.siddharth.employeemanager.exception.UserNotFoundException;
 import com.siddharth.employeemanager.model.Employee;
 import com.siddharth.employeemanager.repo.EmployeeRepo;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EmployeeService {
 
@@ -34,6 +36,7 @@ public class EmployeeService {
 		return empRepo.save(employee);
 	}
 	
+	@Transactional
 	public void deleteEmployee(Long id) {
 		empRepo.deleteEmployeeById(id);
 	}
