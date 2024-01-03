@@ -13,11 +13,10 @@ import com.siddharth.employeemanager.repo.EmployeeRepo;
 import jakarta.transaction.Transactional;
 
 @Service
-public class EmployeeService {
+public class EmployeeService implements EmployeeServiceInterface {
 
 	private EmployeeRepo empRepo;
 
-	@Autowired
 	public EmployeeService(EmployeeRepo empRepo) {
 		
 		this.empRepo = empRepo;
